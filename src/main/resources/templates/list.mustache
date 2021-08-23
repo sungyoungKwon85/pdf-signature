@@ -1,0 +1,23 @@
+<h1>spring boot web service!!~</h1>
+<div class="col-md-12">
+  <div class="row">
+    <table class="table table-horizontal table-bordered">
+      <thead class="thead-strong">
+      <tr>
+        <th>filename</th>
+        <th>download</th>
+        <th>contentType</th>
+      </tr>
+      </thead>
+      <tbody id="tbody">
+      {{#files}}
+        <tr>
+          <td>{{fileName}}</td>
+          <td><a href="/v1/download?prefix={{prefix}}&fileName={{fileName}}">download</a></td>
+          <td>{{contentType}}</td>
+        </tr>
+      {{/files}}
+      </tbody>
+    </table>
+  </div>
+</div>
