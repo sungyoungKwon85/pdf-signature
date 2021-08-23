@@ -12,8 +12,8 @@ var index = {
     $('#btn-update').on('click', function () {
       _this.update();
     });
-    $('#btn-delete').on('click', function () {
-      _this.delete();
+    $('#btn-file-delete').on('click', function () {
+      _this.deleteFile();
     });
   },
   save : function () {
@@ -58,12 +58,12 @@ var index = {
       alert(JSON.stringify(error));
     })
   },
-  delete : function () {
+  deleteFile: function () {
     var id = $('#id').val();
 
     $.ajax({
       type: 'DELETE',
-      url: '/api/v1/posts/' + id,
+      url: '/files/' + id,
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function () {

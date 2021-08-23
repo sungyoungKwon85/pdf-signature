@@ -58,4 +58,12 @@ public class FileService {
         Resource inputStreamResource = new InputStreamResource(Files.newInputStream(path));
         return new ResponseEntity<>(inputStreamResource, httpHeaders, HttpStatus.OK);
     }
+
+    public void deleteFile(FileDto fileDto) {
+        Path path = Paths.get(filePath + "/" + fileDto.getPrefix() + SEPARATOR + fileDto.getFileName());
+        File file = new File(path.toString());
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 }

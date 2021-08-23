@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    restart: always
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=kkwonsy
+      - MYSQL_PASSWORD=kkwonsy1!
+      - MYSQL_DATABASE=FILE_INFO
+    volumes:
+      - ./local-mysql-config:/etc/mysql/conf.d
+    ports:
+      - 43306:3306

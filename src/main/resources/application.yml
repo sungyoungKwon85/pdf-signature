@@ -4,3 +4,20 @@ spring:
       max-request-size: 10MB
       max-file-size: 10MB
       location: /tmp/
+
+  datasource:
+    url: jdbc:mysql://localhost:43306/FILE_INFO?autoReconnect=true&autoReconnectForPools=true&serverTimezone=Asia/Seoul&useSSL=false
+    username: kkwonsy
+    password: kkwonsy1!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+
+
+
+logging:
+  level:
+    org.springframework.web: DEBUG
